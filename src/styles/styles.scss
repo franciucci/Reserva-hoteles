@@ -1,0 +1,230 @@
+/* basic styles */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Header styles */
+.header {
+  width: 100%;
+  padding: 50px 15px;
+  background-color: #33DCFF;
+  &__title {
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+  }
+  &__text {
+    margin: 5px 0;
+    text-align: center; 
+    font-family: sans-serif;
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+/* Filter component styles */
+.filters {
+  padding: 5px;
+  background-color: #335AFF;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas: 
+  "dateFrom dateTo"
+  "countries countries"
+  "prices prices"
+  "sizes sizes"
+  "reset reset";
+  &__dateFrom {
+    grid-area: dateFrom;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 2px;
+    outline: none;
+  }
+  &__dateTo {
+    grid-area: dateTo;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 2px;
+    outline: none;
+  }
+  &__countries {
+    grid-area: countries;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 2px;
+    outline: none;
+  }
+  &__prices {
+    grid-area: prices;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 2px;
+    outline: none;
+  }
+  &__sizes {
+    grid-area: sizes;
+    border-radius: 10px;
+    padding: 2px;
+    margin: 2px;
+    outline: none;
+  }
+  &__reset {
+    grid-area: reset;
+    margin: 2px;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: lightgray;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+
+/* Styles for desktop */
+@media screen and (min-width: 672px) {
+  .filters {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    &__reset {
+      margin: 1px;
+    }
+  }
+}
+
+/* Styles for hotelList and hotelCards */
+.hotelList {
+  margin: 25px 15px; 
+  display: flex;
+  flex-flow: column;
+}
+.filtersActives {
+  @extend .searchText;
+  &__btn {
+    margin: 2px;
+    padding: 2px 5px;
+    background-color: #E3E3E3;
+    border-radius: 10px;
+    outline: none;
+    &__close {
+      margin: 2px;
+      padding: 2px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+}
+.searchText {
+  margin-top: 20px;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: dimgrey;
+  text-align: center;
+}
+.hotelCard {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin: 10px;
+  box-shadow: 1px 1px 1px lightgray;
+  border: 1px solid #F3F3F3;
+  background-color: #F3F3F3;
+  &__img {
+    max-width: 100%;
+  }
+  &__name {
+    padding:15px;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: #292828;
+  }
+  &__description {
+    padding: 0 15px;
+    text-align: justify;
+    font-family: sans-serif;
+    font-size: 14px;
+    color: #3F3F3F;
+  }
+  &__location {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    &__icon {
+      padding: 4px;
+      font-size: 24px;
+      color: white;
+      background-color: #335AFF;
+      opacity: 0.8;
+      border-radius: 5px 0 0 5px;
+    }
+    &__text {
+      padding: 5px;
+      background-color: #EEEEEE;
+      font-family: sans-serif;
+      font-size: 14px;
+      color: #3F3F3F;
+    }
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+    &__room {
+      padding: 2px 15px;
+      display: flex;
+      align-items: center;
+      &__icon {
+        padding: 4px;
+        font-size: 24px;
+        color: white;
+        background-color: #335AFF;
+        opacity: 0.8;
+        border-radius: 5px 0 0 5px;
+      }
+      &__text {
+        padding: 5px;
+        background-color: #EEEEEE;
+        font-family: sans-serif;
+        font-size: 14px;
+        color: #3F3F3F;
+      }
+    }
+    &__price {
+      padding: 4px;
+      background-color: #335AFF;
+      opacity: 0.8;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      letter-spacing: 2px;
+      border-radius: 5px;
+    }
+  }
+  &__btn {
+    margin-top: 5px;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: white;
+    font-weight: 600;
+    background-color: #33DCFF;
+    border: none;
+    cursor: pointer;
+  }
+}
+/* hotelList and cards styles for desktop */
+@media screen and (min-width: 672px) {
+  .hotelList {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+  .hotelCard {
+    width: 30%;
+  }
+}
